@@ -316,6 +316,11 @@ class Activity(ActivityTrackingModel):
     # for the sake of verbosity for the challenge, declare
     # it explicitly
     id = models.AutoField(primary_key=True)
+    school = models.ForeignKey(
+        'School',
+        on_delete=models.CASCADE,  # Delete with user
+        related_name='activities',
+    )
     name = models.CharField(max_length=150)  # Required
     description = models.TextField()  # Unlimited length, required
     # Making an assumption here that an activity will never fall
@@ -326,10 +331,10 @@ class Activity(ActivityTrackingModel):
         related_name='+',  # Disable reverse lookup
     )
     start_date = models.DateTimeField()  # Required
-    location = models.ForeignKey(
-        'Location',
+    venue = models.ForeignKey(
+        'Venue',
         on_delete=models.PROTECT,  # Protect if activities exist
-        related_name='+',  # Disable reverse lookup
+        related_name='activities',
     )
     distance_from_school = models.IntegerField(default=0)  # In metres
 
