@@ -12,39 +12,38 @@
         </div>
     </div>
     <div class="container">
+        <div class="row mb-4">
+            <div class="col-sm-12 text-right">
+                <a href="" class="btn btn-success">+ Add New Activity</a>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-12">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Venue</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Distance</th>
+                            <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {% for activity in activities %}
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>{{ activity.name }}</td>
+                            <td>{{ activity.start_date }}</td>
+                            <td>{{ activity.venue }}</td>
+                            <td>{{ activity.venue.location }}</td>
+                            <td>{{ activity.distance_from_school }} km</td>
+                            <td><a class="btn-sm btn-primary" href="{% url 'home' %}" role="button">View &raquo;</a>
+                            </td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
-                <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
             </div>
         </div>
     </div>

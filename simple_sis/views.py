@@ -37,6 +37,13 @@ def logout(request):
 @login_required
 def home(request):
     ''''''
-    context = {'page_title': 'Home'}
+    user = request.user
+    activities = user.school.activities.all()
+
+    context = {
+        'page_title': 'Home',
+        'user': user,
+        'activities': activities,
+    }
 
     return render(request, 'home.html', context)
