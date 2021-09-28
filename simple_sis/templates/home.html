@@ -4,13 +4,6 @@
 {{ block.super }}
 
 <main role="main">
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="text-center py-5">School Activities</h1>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <div class="row mb-4">
             <div class="col-sm-12 text-right">
@@ -38,7 +31,8 @@
                             <td>{{ activity.venue }}</td>
                             <td>{{ activity.venue.location }}</td>
                             <td>{{ activity.distance_from_school }} km</td>
-                            <td><a class="btn-sm btn-primary" href="{% url 'home' %}" role="button">View &raquo;</a>
+                            <td><a class="btn-sm btn-primary" href="{% url 'view-activity' activity.id %}"
+                                    role="button">View &raquo;</a>
                             </td>
                         </tr>
                         {% endfor %}

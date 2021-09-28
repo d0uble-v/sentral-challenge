@@ -1,0 +1,129 @@
+{% extends 'base-logged-in.html' %}
+
+{% block content %}
+{{ block.super }}
+
+<main role="main">
+    <div class="container mt-5">
+        <div class="row mb-4">
+            <div class="col-sm-12 text-right">
+                <a href="{% url 'home' %}" class="btn btn-primary">&laquo; Back</a>
+            </div>
+        </div>
+
+        <dl class="row">
+            <dt class="col-sm-3">Name</dt>
+            <dd class="col-sm-9">{{ activity.name }}</dd>
+
+            <dt class="col-sm-3">Category</dt>
+            <dd class="col-sm-9">{{ activity.category.name }}</dd>
+
+            <dt class="col-sm-3">Description</dt>
+            <dd class="col-sm-9">{{ activity.description }}</dd>
+
+            <dt class="col-sm-3">Date</dt>
+            <dd class="col-sm-9">{{ activity.start_date }}</dd>
+
+            <dt class="col-sm-3">Venue</dt>
+            <dd class="col-sm-9">{{ activity.venue.name }}</dd>
+
+            <dt class="col-sm-3">Address</dt>
+            <dd class="col-sm-9">{{ activity.venue.location }}</dd>
+
+            <dt class="col-sm-3">Distance from school</dt>
+            <dd class="col-sm-9">{{ activity.distance_from_school }} km</dd>
+        </dl>
+
+        <div class="row mt-5">
+            <div class="col-sm-12 mb-3 d-flex justify-content-between">
+                <h4>Organisers</h4>
+                <a href="{% url 'home' %}" class="btn btn-success">+ Add Organiser</a>
+            </div>
+            <div class="col-sm-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">First name</th>
+                            <th scope="col">Last name</th>
+                            <th scope="col">Approved</th>
+                            <th scope="col">Attended</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for organiser in organisers %}
+                        <tr>
+                            <td>{{ organiser.user.first_name }}</td>
+                            <td>{{ organiser.user.last_name }}</td>
+                            <td>{% if organiser.approved_at %}Yes{% else %}No{% endif %}</td>
+                            <td>{% if organiser.attended_at %}Yes{% else %}No{% endif %}</td>
+                            <td></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-sm-12 mb-3 d-flex justify-content-between">
+                <h4>Participants</h4>
+                <a href="{% url 'home' %}" class="btn btn-success text-right">+ Add Participant</a>
+            </div>
+            <div class="col-sm-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">First name</th>
+                            <th scope="col">Last name</th>
+                            <th scope="col">Approved</th>
+                            <th scope="col">Attended</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for attendee in attendees %}
+                        <tr>
+                            <td>{{ attendee.user.first_name }}</td>
+                            <td>{{ attendee.user.last_name }}</td>
+                            <td>{% if attendee.approved_at %}Yes{% else %}No{% endif %}</td>
+                            <td>{% if attendee.attended_at %}Yes{% else %}No{% endif %}</td>
+                            <td></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-sm-12 text-right">
+                <a href="{% url 'home' %}" class="btn btn-primary">&laquo; Back</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Organiser</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="">
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" type="submit">+ Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
