@@ -1,0 +1,231 @@
+[
+    {
+        "model": "simple_sis.lookupcode",
+        "pk": 1,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:05:06Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:05:06Z",
+            "type": 1,
+            "code": "ACTIVITY_EXCURSION",
+            "name": "Excursion",
+            "description": null
+        }
+    },
+    {
+        "model": "simple_sis.lookupcode",
+        "pk": 2,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:05:30Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:05:30Z",
+            "type": 1,
+            "code": "ACTIVITY_PICNIC",
+            "name": "Picnic",
+            "description": null
+        }
+    },
+    {
+        "model": "simple_sis.lookupcode",
+        "pk": 3,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:10:39Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:10:39Z",
+            "type": 2,
+            "code": "ATTENDEE_VOLUNTEER",
+            "name": "Volunteer",
+            "description": null
+        }
+    },
+    {
+        "model": "simple_sis.lookupcode",
+        "pk": 4,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:11:06Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:11:06Z",
+            "type": 2,
+            "code": "ATTENDEE_STUDENT",
+            "name": "Student",
+            "description": null
+        }
+    },
+    {
+        "model": "simple_sis.lookupcodetype",
+        "pk": 1,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:02:33Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:02:33Z",
+            "code": "ACTIVITY_TYPE",
+            "description": null
+        }
+    },
+    {
+        "model": "simple_sis.lookupcodetype",
+        "pk": 2,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:03:30Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:03:30Z",
+            "code": "ACTIVITY_ATTENDEE_TYPE",
+            "description": null
+        }
+    },
+    {
+        "model": "simple_sis.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$u8yYbjIBYKW5LICJPUy1ZS$vk7la1WYu10CFBzNgmlE4UkOsBa8N4Wnzbwu+b1ET9k=",
+            "last_login": "2021-09-28T10:01:24.892Z",
+            "is_superuser": true,
+            "created_by": null,
+            "created_date": "2021-09-28T10:01:04.916Z",
+            "updated_by": null,
+            "updated_date": "2021-09-28T10:01:04.916Z",
+            "first_name": null,
+            "last_name": null,
+            "email": "maccorone@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "school": null,
+            "account_type": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "simple_sis.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$T1Faq6vrjcRir3Dp4ItfZG$lvEYLXkSfAY65N3WtfzDQ+pSn3xbmK6V9HF7VO0r7oE=",
+            "last_login": "2021-09-28T13:05:23.802Z",
+            "is_superuser": false,
+            "created_by": 1,
+            "created_date": "2021-09-28T12:20:40Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T12:20:40Z",
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "john.doe@email.com",
+            "is_staff": false,
+            "is_active": true,
+            "school": 1,
+            "account_type": 1,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "simple_sis.useraccounttype",
+        "pk": 1,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:09:34Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:09:34Z",
+            "name": "Staff"
+        }
+    },
+    {
+        "model": "simple_sis.useraccounttype",
+        "pk": 2,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:10:14Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:10:14Z",
+            "name": "Student"
+        }
+    },
+    {
+        "model": "simple_sis.useraccounttype",
+        "pk": 3,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:10:22Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:10:22Z",
+            "name": "Parent"
+        }
+    },
+    {
+        "model": "simple_sis.school",
+        "pk": 1,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:20:49Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:20:49Z",
+            "name": "Sample School",
+            "location": 1
+        }
+    },
+    {
+        "model": "simple_sis.location",
+        "pk": 1,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:15:21Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:15:21Z",
+            "address_line_1": "123 Some Street",
+            "address_line_2": null,
+            "city": "Some City",
+            "state": "NSW",
+            "postcode": "2058"
+        }
+    },
+    {
+        "model": "simple_sis.location",
+        "pk": 2,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:20:30Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:20:30Z",
+            "address_line_1": "321 Other Street",
+            "address_line_2": null,
+            "city": "Other City",
+            "state": "NSW",
+            "postcode": "2078"
+        }
+    },
+    {
+        "model": "simple_sis.activity",
+        "pk": 1,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T11:49:13Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T11:49:13Z",
+            "school": 1,
+            "name": "Museum Excursion",
+            "description": "Some description",
+            "category": 1,
+            "start_date": "2021-10-11T11:50:00Z",
+            "venue": 1,
+            "distance_from_school": 0
+        }
+    },
+    {
+        "model": "simple_sis.venue",
+        "pk": 1,
+        "fields": {
+            "created_by": 1,
+            "created_date": "2021-09-28T10:21:13Z",
+            "updated_by": 1,
+            "updated_date": "2021-09-28T10:21:13Z",
+            "name": "Sample Venue",
+            "description": "",
+            "location": 2
+        }
+    }
+]
