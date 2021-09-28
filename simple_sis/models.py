@@ -365,7 +365,7 @@ class ActivityAttendee(ActivityTrackingModel):
     activity = models.ForeignKey(
         'Activity',
         on_delete=models.CASCADE,  # Delete with activity
-        related_name='+',  # Disable reverse lookup
+        related_name='attendees',
     )
     # Making an assumption here that the checks/confirmations/payments
     # will be handled externally and translated into the approval status.
