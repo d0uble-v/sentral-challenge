@@ -49,7 +49,9 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = []
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'simple_sis.apps.SimpleSisConfig',
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -146,3 +148,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Custom User Model
+# https://docs.djangoproject.com/en/3.2/ref/contrib/auth/#user-model
+
+AUTH_USER_MODEL = 'simple_sis.User'
